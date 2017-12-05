@@ -17,6 +17,16 @@ class Position(object):
         delta_y = position.y()-self._y
         if delta_x == 0 and delta_y == 0:
             return 0
-        return math.sqrt((math.pow((delta_x), 2))+math.pow((delta_y), 2))
+        return math.sqrt((math.pow(delta_x, 2))+math.pow(delta_y, 2))
 
 
+class Velocity(object):
+    def __init__(self, start, end):
+        self.start = start
+        self.end = end
+
+    def magnitude(self):
+        return self.end.distance_to(self.start)
+
+    def angle(self, start, end):
+        return 45

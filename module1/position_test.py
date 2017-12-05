@@ -1,5 +1,5 @@
 import unittest
-from shoting import Position
+from shooting import Position
 
 class PositionTest(unittest.TestCase):
     def test_position_can_be_created_with_no_params(self):
