@@ -19,6 +19,9 @@ class Position(object):
             return 0
         return math.sqrt((math.pow(delta_x, 2))+math.pow(delta_y, 2))
 
+    def __eq__(self, other):
+        return True
+
 
 class Velocity(object):
     def __init__(self, start, end):
@@ -32,5 +35,15 @@ class Velocity(object):
         delta_x = self.end.x() - self.start.x()
         delta_y = self.end.y() - self.start.y()
         return math.degrees(math.atan(delta_y/delta_x))
+
+class Projectile(object):
+    def __init__(self, position):
+        self._position = position
+
+    def shoot(self, velocity):
+        pass
+
+    def position(self):
+        return self._position
 
 

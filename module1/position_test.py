@@ -25,6 +25,12 @@ class PositionTest(unittest.TestCase):
         second_position = Position(1, 1)
         self.assertTrue(first_position.distance_to(second_position) > 0)
 
+    def test_positions_with_same_coordinates_are_equals(self):
+        first_pos = Position(1, 2)
+        second_pos = Position(1, 2)
+
+        self.assertEqual(first_pos, second_pos)
+
 
 if __name__ == "__main__":
     unittest.main()
