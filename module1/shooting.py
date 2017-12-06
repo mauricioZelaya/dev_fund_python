@@ -28,9 +28,9 @@ class Velocity(object):
     def magnitude(self):
         return self.end.distance_to(self.start)
 
-    def angle(self, start, end):
-        delta_x = end.x() - start.x()
-        delta_y = end.y() - start.y()
+    def angle(self):
+        delta_x = self.end.x() - self.start.x()
+        delta_y = self.end.y() - self.start.y()
         return math.degrees(math.atan(delta_y/delta_x))
 
 

@@ -34,7 +34,7 @@ class VelocityTest(unittest.TestCase):
 
         velocity = Velocity(start_position, end_position)
 
-        self.assertEqual(45, velocity.angle(start_position, end_position))
+        self.assertEqual(45, velocity.angle())
 
     def test_angle_of_velpcity_is_determined_by_the_arctangent(self):
         start_position = Position()
@@ -43,7 +43,7 @@ class VelocityTest(unittest.TestCase):
 
         velocity = Velocity(start_position, end_position)
 
-        self.assertEqual(angle, velocity.angle(start_position, end_position))
+        self.assertEqual(angle, velocity.angle())
 
 
 if __name__ == "__main__":
