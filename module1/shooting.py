@@ -29,4 +29,8 @@ class Velocity(object):
         return self.end.distance_to(self.start)
 
     def angle(self, start, end):
-        return 45
+        delta_x = end.x() - start.x()
+        delta_y = end.y() - start.y()
+        return math.degrees(math.atan(delta_y/delta_x))
+
+
