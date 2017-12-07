@@ -17,6 +17,17 @@ class ProjectileTest(unittest.TestCase):
         self.assertTrue(isinstance(projectile.position(), Position))
         self.assertNotEqual(initial_position, projectile.position())
 
+    def test_projectile_shot_to_the_floor_should_remain_there(self):
+        initial_position = Position(5, 10)
+        projectile = Projectile(initial_position)
+        velocity = Velocity(Position(), Position(0, -1))
+
+        projectile.shoot(velocity)
+
+        self.assertEqual(Position(5, 0), projectile.position())
+
+    def test_projectile_shot_with_a_given_angle_follows_a_parabolic_path(self):
+        pass
 
 
 if __name__ == "__main__":

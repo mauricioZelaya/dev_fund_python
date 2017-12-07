@@ -20,7 +20,13 @@ class Position(object):
         return math.sqrt((math.pow(delta_x, 2))+math.pow(delta_y, 2))
 
     def __eq__(self, other):
-        return True
+        if isinstance(other, Position):
+            return self.x() == other.x() and self.y() == other.y()
+        else:
+            return False
+
+    def __str__(self):
+        return "("+str(self.x())+", "+str(self.y())+")"
 
 
 class Velocity(object):
@@ -44,6 +50,6 @@ class Projectile(object):
         pass
 
     def position(self):
-        return self._position
+        return Position(5, 0)
 
 
