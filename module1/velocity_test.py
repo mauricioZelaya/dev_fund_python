@@ -44,6 +44,8 @@ class VelocityTest(unittest.TestCase):
         velocity = Velocity(start_position, end_position)
 
         self.assertEqual(angle, velocity.angle())
+        self.assertTrue(velocity.angle() > 45)
+        self.assertTrue(velocity.angle() < 90)
 
 
 if __name__ == "__main__":

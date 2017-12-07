@@ -33,4 +33,3 @@ class Velocity(object):
         delta_y = self.end.y() - self.start.y()
         return math.degrees(math.atan(delta_y/delta_x))
 
-
