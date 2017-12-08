@@ -20,7 +20,7 @@ class Position(object):
         return math.sqrt((math.pow(delta_x, 2))+math.pow(delta_y, 2))
 
     def __eq__(self, other):
-        return True
+        return other.x() == self.x() and other.y() == self.y()
 
 
 class Velocity(object):

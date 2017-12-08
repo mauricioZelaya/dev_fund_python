@@ -31,6 +31,12 @@ class PositionTest(unittest.TestCase):
 
         self.assertEqual(first_pos, second_pos)
 
+    def test_positions_with_different_coordinates_are_not_equals(self):
+        first_pos = Position(1, 2)
+        second_pos = Position(1, 3)
+
+        self.assertNotEqual(first_pos, second_pos)
+
 
 if __name__ == "__main__":
     unittest.main()
