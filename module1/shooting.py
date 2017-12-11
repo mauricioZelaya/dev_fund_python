@@ -30,17 +30,28 @@ class Position(object):
 
 
 class Velocity(object):
-    def __init__(self, start, end):
-        self.start = start
-        self.end = end
+    def __init__(self):
+        self._magnitude = 0
+        self._angle = 0
+        self._start = Position()
+        self._end = Position()
 
-    def magnitude(self):
-        return self.end.distance_to(self.start)
-
-    def angle(self):
+    def create_from_positions(self, start, end):
+        self._magnitude = end.distance_to(start)
         delta_x = self.end.x() - self.start.x()
         delta_y = self.end.y() - self.start.y()
-        return math.degrees(math.atan(delta_y/delta_x))
+        self._angle = math.degrees(math.atan(delta_y/delta_x))
+
+    def create_from_values(self, magnitude, angle):
+        self._magnitude = magnitude
+        self._angle = angle
+
+    def magnitude(self):
+        return self._magnitude
+
+    def angle(self):
+        return self._angle
+
 
 class Projectile(object):
     def __init__(self, position):

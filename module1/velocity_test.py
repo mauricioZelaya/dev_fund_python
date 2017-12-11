@@ -10,9 +10,10 @@ class VelocityTest(unittest.TestCase):
         start_position = Position()
         end_position = Position(4, 3)
 
-        velocity = Velocity(start_position, end_position)
+        velocity = Velocity()
 
         self.assertIsNotNone(velocity)
+        self.assertIsNotNone(velocity.create_from_positions(start_position, end_position))
 
     def test_magnitude_is_zero_if_start_and_end_positions_are_the_same(self):
         position = Position(1,1)
@@ -45,6 +46,11 @@ class VelocityTest(unittest.TestCase):
 
         self.assertEqual(angle, velocity.angle())
 
+
+    def test_velocity_can_be_created_with_magnitude_and_angle(self):
+        velocity = Velocity(5, 45)
+        self.assertEqual(45, velocity.angle())
+        self.assertEqual(5, velocity.magnitude())
 
 if __name__ == "__main__":
     unittest.main()
