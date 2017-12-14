@@ -43,12 +43,13 @@ class Velocity(object):
         delta_y = self.end.y() - self.start.y()
         return math.degrees(math.atan(delta_y/delta_x))
 
+
 class Projectile(object):
     def __init__(self, position):
         self._position = position
 
     def shoot(self, velocity):
-        pass
+        return velocity.angle()
 
     def position(self):
         return Position(5, 0)
