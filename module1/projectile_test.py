@@ -24,11 +24,6 @@ class ProjectileTest(unittest.TestCase):
 
         projectile.shoot(velocity)
 
-        self.assertEqual(Position(5, 0), projectile.position())
-
-    def test_projectile_shot_with_a_given_angle_follows_a_parabolic_path(self):
-        pass
-
 
 if __name__ == "__main__":
     unittest.main()

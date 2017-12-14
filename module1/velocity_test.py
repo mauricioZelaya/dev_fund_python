@@ -25,7 +25,8 @@ class VelocityTest(unittest.TestCase):
         start_position = Position()
         end_position = Position(4, 3)
 
-        velocity = Velocity(start_position, end_position)
+        velocity = Velocity()
+        velocity.create_from_positions(start_position, end_position)
 
         self.assertEqual(5, velocity.magnitude())
 
@@ -42,13 +43,15 @@ class VelocityTest(unittest.TestCase):
         end_position = Position(3, 4)
         angle = math.degrees(math.atan(4/3))
 
-        velocity = Velocity(start_position, end_position)
+        velocity = Velocity()
+        velocity
 
         self.assertEqual(angle, velocity.angle())
 
 
     def test_velocity_can_be_created_with_magnitude_and_angle(self):
-        velocity = Velocity(5, 45)
+        velocity = Velocity()
+        velocity.create_from_values(5, 45)
         self.assertEqual(45, velocity.angle())
         self.assertEqual(5, velocity.magnitude())
 

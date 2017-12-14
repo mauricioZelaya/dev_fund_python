@@ -38,8 +38,8 @@ class Velocity(object):
 
     def create_from_positions(self, start, end):
         self._magnitude = end.distance_to(start)
-        delta_x = self.end.x() - self.start.x()
-        delta_y = self.end.y() - self.start.y()
+        delta_x = self._end.x() - self._start.x()
+        delta_y = self._end.y() - self._start.y()
         self._angle = math.degrees(math.atan(delta_y/delta_x))
 
     def create_from_values(self, magnitude, angle):
